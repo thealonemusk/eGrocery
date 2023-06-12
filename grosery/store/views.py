@@ -5,6 +5,7 @@ from django.http import JsonResponse
 import json
 import datetime
 from .utils import cookieCart, cartData, guestOrder
+from .models import Product
 
 # Create your views here.
 def store(request):
@@ -92,3 +93,38 @@ def processOrder(request):
 		)
 
 	return JsonResponse('Payment submitted..', safe=False)
+
+
+
+def search_view(request):
+    query = request.GET.get('query')  # Get the search query from the URL parameters
+
+    if query:
+        products = Product.objects.filter(name__icontains=query)  # Perform the search query on the 'name' field of the Product model
+    else:
+        products = Product.objects.none()  # If no query is provided, return an empty queryset
+
+    context = {
+        'query': query,
+        'products': products,
+    }
+
+    return render(request, 'search.html', context)
+
+
+
+def home(request):
+    return render(request, 'home.html')  # Replace 'home.html' with your actual home template file
+
+def products(request):
+    # Add your logic here to fetch and process the products data
+    return render(request, 'products.html')
+
+def categories(request):
+    # Add your logic here to fetch and process the categories data
+    return render(request, 'categories.html')
+def reviews(request):
+    # Add your logic here to fetch and process the reviews data
+    return render(request, 'reviews.html') 
+
+

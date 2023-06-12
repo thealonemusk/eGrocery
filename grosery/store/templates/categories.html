@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <!-- Add your CSS stylesheets and other necessary dependencies here -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <!-- Add your navbar or header section here -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">Your Logo</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/categories">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/products">Products</a>
+                </li>
+                <!-- Add other navbar items as needed -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Add your category content here -->
+    <div class="container">
+        <h1>Categories</h1>
+        <ul class="category-list">
+            <li class="category-item">
+                <a href="#">Category 1</a>
+            </li>
+            <li class="category-item">
+                <a href="#">Category 2</a>
+            </li>
+            <!-- Add other category items dynamically using Django template tags -->
+        </ul>
+    </div>
+
+    <!-- Add your footer section here -->
+
+    <!-- Add your JavaScript scripts and other necessary dependencies here -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
