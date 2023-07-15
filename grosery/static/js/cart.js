@@ -14,7 +14,7 @@ for (i = 0; i < updateBtns.length; i++) {
 		}
 	})
 }
-
+// main function 
 function updateUserOrder(productId, action){
 	console.log('User is authenticated, sending data...')
 
